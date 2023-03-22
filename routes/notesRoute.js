@@ -3,7 +3,7 @@ const {readFromFile, readAndAppend} = require("../helpers/fsUtils");
 const uuid = require("../helpers/uuid");
 
 // Get route for retrieving all the notes
-notes.get("/", (req, res) => {
+notes.get("/notes", (req, res) => {
     readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
@@ -27,4 +27,4 @@ notes.post("/", (req, res) => {
     }
 });
 
-module.exports = notesRoute;
+module.exports = notes;
